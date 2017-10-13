@@ -47761,6 +47761,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -47804,7 +47805,11 @@ var render = function() {
           expression: "messageText"
         }
       ],
-      attrs: { type: "text", placeholder: "Start typing your message.." },
+      attrs: {
+        type: "text",
+        id: "message",
+        placeholder: "Start typing your message.."
+      },
       domProps: { value: _vm.messageText },
       on: {
         keyup: function($event) {
