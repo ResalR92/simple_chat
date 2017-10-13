@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <p>{{ message }}</p>
-        <span>{{ user }}</span>
+    <div class="chat-message">
+        <p>{{ message.message }}</p>
+        <span>{{ message.user }}</span>
     </div>
 </template>
 
@@ -9,15 +9,14 @@
 export default {
 
   name: 'ChatMessage',
-
+  props:['message'],
   data () {
     return {
-        message : "Here is the message",
-        user : "Resal Ramdahadi"
+
     };
   }
 };
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 </style>
