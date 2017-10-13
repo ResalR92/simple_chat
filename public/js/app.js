@@ -1222,6 +1222,10 @@ var app = new Vue({
     methods: {
         addMessage: function addMessage(message) {
             this.messages.push(message);
+            //store to db
+            axios.post("messages", message).then(function (response) {
+                console.log(response);
+            });
         }
     },
 

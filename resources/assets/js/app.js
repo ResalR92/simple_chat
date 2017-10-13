@@ -28,6 +28,10 @@ const app = new Vue({
     methods : {
         addMessage(message) {
             this.messages.push(message);
+            //store to db
+            axios.post("messages",message).then(response => {
+                console.log(response);
+            });
         }
     },
 
