@@ -1,5 +1,5 @@
 <?php
-
+use App\Events\MessagePosted;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,9 +27,11 @@ Route::middleware('auth')->post('/messages', function() {
     //Store the new messsage
     $user = Auth::user();
 
-    $user->messages()->create([
+    $message = $user->messages()->create([
         'message' => request()->get('message')
     ]);
+    //announce that a new message has been posted
+    event(new MessagePosted($message, $user));
 
     return response()->json(['status'=>'OK'],201);
 });
