@@ -31,7 +31,7 @@ Route::middleware('auth')->post('/messages', function() {
         'message' => request()->get('message')
     ]);
     //announce that a new message has been posted
-    event(new MessagePosted($message, $user));
+    broadcast(new MessagePosted($message, $user))->toOthers(); //send to other user
 
     return response()->json(['status'=>'OK'],201);
 });
