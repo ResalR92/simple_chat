@@ -19,6 +19,10 @@ Route::middleware('auth')->get('/chat', function () {
     return view('chat');
 });
 
+Route::middleware('auth')->get('/messages', function() {
+    return App\Message::with('user')->get();
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -22,7 +22,9 @@ export default {
     sendMessage() {
         this.$emit('messagesent', {
             message : this.messageText,
-            user : "Jane Poe"
+            user: {
+              name : $('.navbar-right .dropdown-toggle').text()
+            }
         });
         // console.log(this.messageText);
         this.messageText = '';
