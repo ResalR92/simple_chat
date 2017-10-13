@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
     .chat-log .chat-message:nth-child(even) {
         background-color: #ccc;
     }
